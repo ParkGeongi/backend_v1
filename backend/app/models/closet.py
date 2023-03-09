@@ -1,11 +1,11 @@
-from sqlalchemy import Column, ForeignKey, Integer, String
+from sqlalchemy import Column, ForeignKey, String
 from sqlalchemy.orm import relationship
 
-from app.database import Base
+from app.utils.database import Base
 
 
 class Closet(Base):
-    __tablename__ = 'closet'
+    __tablename__ = 'closets'
     closet_id = Column(String(30), primary_key=True)
     cloth_img = Column(String(100))
     user_id = Column(String(30), ForeignKey('users.user_id'), nullable=True)

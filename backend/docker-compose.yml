@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   db:
-    container_name: howsfitdb
+    container_name: "db-howsfit"
     build: ./docker/mysql
     restart: always
     tty: true
@@ -15,8 +15,8 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - ./docker/mysql/initdb.d:/docker-entrypoint-initdb.d
       - ./docker/mysql/conf.d:/etc/mysql/conf.d
+      - ./docker/mysql/initdb.d:/docker-entrypoint-initdb.d
 
     networks:
       - local-net
@@ -25,12 +25,11 @@ services:
     links:
       - db
     container_name: "api-howsfit"
-
     build: ./docker/api
     ports:
       - "8000:8000"
     volumes:
-      - .:/usr/src/app
+      - .:/app
     networks:
       - local-net
 networks:

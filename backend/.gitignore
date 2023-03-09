@@ -16,7 +16,7 @@ log.txt
 Pipfile.lock
 env3.*
 app/env-aws.py
-app/env.py
+app/utils/env.py
 docker/api/Dockerfile
 docs_build
 venv
@@ -25,8 +25,8 @@ archive.zip
 app/**/*.txt
 app/**/*.pt
 app/../*.md
-app/services/yolo/weight/yolov5s.pt
-app/services/yolo/weight/best.pt
+app/utils/weights/yolov5s.pt
+app/utils/weights/best.pt
 app/services/personal_color/save/shape_predictor_68_face_landmarks.dat
 # vim temporary files
 *~

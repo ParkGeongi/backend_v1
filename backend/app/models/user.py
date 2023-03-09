@@ -3,7 +3,7 @@ from sqlalchemy import Column, String
 
 from sqlalchemy.orm import relationship
 
-from app.database import Base
+from app.utils.database import Base
 
 class User(Base):
     __tablename__ = 'users'
@@ -23,7 +23,6 @@ class User(Base):
         return f'아이디: {self.userid}, \n ' \
                f'이메일: {self.email}, \n ' \
                f'비밀번호: {self.password} \n' \
+               f'이름: {self.name} \n' \
                f'전화번호: {self.phone} \n' \
-               f'생년월일: {self.birth} \n' \
-               f'주소: {self.address} \n' \
-               f'토큰: {self.token} \n'
+               f'토큰: {self.token} \n' \
